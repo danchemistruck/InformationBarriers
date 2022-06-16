@@ -2,12 +2,12 @@
 	.SYNOPSIS
 	Creates symmetric block policies for all segments in the Information Barriers portal, with an exclusion list.	
  
-	.DESCRIPTION
-	Requires the ExchangeOnlineManagement module:
-		Install-Module -Name ExchangeOnlineManagement
-		Import-Module -Name ExchangeOnlineManagement
-	Assumes that there are no "Allow" policies and that you want to bulk block each Segment from each other.
-	There is an option to exclude Segments so that custom policies can be created manually instead.
+    .DESCRIPTION
+    Requires the ExchangeOnlineManagement module:
+        Install-Module -Name ExchangeOnlineManagement
+        Import-Module -Name ExchangeOnlineManagement
+    Assumes that there are no "Allow" policies and that you want to bulk block each Segment from each other.
+    There is an option to exclude Segments so that custom policies can be created manually instead.
 
     .PARAMETER exclusions
     Specifies the prefix of segments that are allowed to talk to any other segment. Supports regex and wildcards. Combine multiple segment names with a '|' for example: corp*|sales|accounting
@@ -25,7 +25,7 @@
     .\Set-InformationBarriers-SymmetricBlockPolicies.ps1 -exclusions 'corporate*|HR' -logPath 'C:\logs' -connect $false -disconnect $false
 
     .NOTES
-    Run this script at your own risk. Microsoft does not provide any support or warranty for any actions performed by this script.
+    Run this script at your own risk. Microsoft and I will not provide any support or warranty for any actions performed by this script.
  
     AUTHOR
     Dan Chemistruck
@@ -35,7 +35,7 @@
 
     MIT License
 
-    Copyright (c) 2022 Microsoft
+    Copyright (c) 2022 Dan Chemistruck
     
     All rights reserved.
 
