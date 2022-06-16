@@ -153,7 +153,7 @@ Process
                 $logObject| add-member -membertype NoteProperty -name "Policy" -Value $logName
                 $logObject| add-member -membertype NoteProperty -name "Error" -Value "Success"
                 $logObject| add-member -membertype NoteProperty -name "Step" -Value "Updating Existing Policy"
-                $logObject| add-member -membertype NoteProperty -name "Time" -Value $(get-date -Format yyyy-MM-dd-HH:mm:ss)
+                $logObject| add-member -membertype NoteProperty -name "Time" -Value $(get-date -Format yyyy-MM-dd HH:mm:ss)
                 $logObject| export-csv $LogPath -nti -append -force     
             }
             catch{
@@ -163,7 +163,7 @@ Process
                 $errorObject| add-member -membertype NoteProperty -name "Policy" -Value $errName
                 $errorObject| add-member -membertype NoteProperty -name "Error" -Value $_.Exception.Message
                 $errorObject| add-member -membertype NoteProperty -name "Step" -Value "Updating Existing Policy"
-                $errorObject| add-member -membertype NoteProperty -name "Time" -Value $(get-date -Format yyyy-MM-dd-HH:mm:ss)
+                $errorObject| add-member -membertype NoteProperty -name "Time" -Value $(get-date -Format yyyy-MM-dd HH:mm:ss)
                 $errorObject| export-csv $LogPath -nti -append -force
             }
         }
@@ -177,7 +177,7 @@ Process
                 $logObject| add-member -membertype NoteProperty -name "Policy" -Value $name
                 $logObject| add-member -membertype NoteProperty -name "Error" -Value "Success"
                 $logObject| add-member -membertype NoteProperty -name "Step" -Value "Creating New Policy"
-                $logObject| add-member -membertype NoteProperty -name "Time" -Value $(get-date -Format yyyy-MM-dd-HH:mm:ss)
+                $logObject| add-member -membertype NoteProperty -name "Time" -Value $(get-date -Format yyyy-MM-dd HH:mm:ss)
                 $logObject| export-csv $LogPath -nti -append -force     
             }
             catch{
@@ -186,7 +186,7 @@ Process
                 $errorObject| add-member -membertype NoteProperty -name "Policy" -Value $name
                 $errorObject| add-member -membertype NoteProperty -name "Error" -Value $_.Exception.Message
                 $errorObject| add-member -membertype NoteProperty -name "Step" -Value "Creating New Policy"
-                $errorObject| add-member -membertype NoteProperty -name "Time" -Value $(get-date -Format yyyy-MM-dd-HH:mm:ss)
+                $errorObject| add-member -membertype NoteProperty -name "Time" -Value $(get-date -Format yyyy-MM-dd HH:mm:ss)
                 $errorObject| export-csv $LogPath -nti -append -force
             }  
         }
@@ -215,7 +215,7 @@ Process
                 $logObject| add-member -membertype NoteProperty -name "Policy" -Value $logName
                 $logObject| add-member -membertype NoteProperty -name "Error" -Value "Success"
                 $logObject| add-member -membertype NoteProperty -name "Step" -Value "Updating Existing Policy"
-                $logObject| add-member -membertype NoteProperty -name "Time" -Value $(get-date -Format yyyy-MM-dd-HH:mm:ss)
+                $logObject| add-member -membertype NoteProperty -name "Time" -Value $(get-date -Format yyyy-MM-dd HH:mm:ss)
                 $logObject| export-csv $LogPath -nti -append -force     
             }
             catch{
@@ -225,7 +225,7 @@ Process
                 $errorObject| add-member -membertype NoteProperty -name "Policy" -Value $errName
                 $errorObject| add-member -membertype NoteProperty -name "Error" -Value $_.Exception.Message
                 $errorObject| add-member -membertype NoteProperty -name "Step" -Value "Updating Existing Policy"
-                $errorObject| add-member -membertype NoteProperty -name "Time" -Value $(get-date -Format yyyy-MM-dd-HH:mm:ss)
+                $errorObject| add-member -membertype NoteProperty -name "Time" -Value $(get-date -Format yyyy-MM-dd HH:mm:ss)
                 $errorObject| export-csv $LogPath -nti -append -force
             }
         }
@@ -239,7 +239,7 @@ Process
                 $logObject| add-member -membertype NoteProperty -name "Policy" -Value $name
                 $logObject| add-member -membertype NoteProperty -name "Error" -Value "Success"
                 $logObject| add-member -membertype NoteProperty -name "Step" -Value "Creating New Policy"
-                $logObject| add-member -membertype NoteProperty -name "Time" -Value $(get-date -Format yyyy-MM-dd-HH:mm:ss)
+                $logObject| add-member -membertype NoteProperty -name "Time" -Value $(get-date -Format yyyy-MM-dd HH:mm:ss)
                 $logObject| export-csv $LogPath -nti -append -force     
             }
             catch{
@@ -248,7 +248,7 @@ Process
                 $errorObject| add-member -membertype NoteProperty -name "Policy" -Value $name
                 $errorObject| add-member -membertype NoteProperty -name "Error" -Value $_.Exception.Message
                 $errorObject| add-member -membertype NoteProperty -name "Step" -Value "Creating New Policy"
-                $errorObject| add-member -membertype NoteProperty -name "Time" -Value $(get-date -Format yyyy-MM-dd-HH:mm:ss)
+                $errorObject| add-member -membertype NoteProperty -name "Time" -Value $(get-date -Format yyyy-MM-dd HH:mm:ss)
                 $errorObject| export-csv $LogPath -nti -append -force
             }  
         }
@@ -266,7 +266,7 @@ End
             $logObject| add-member -membertype NoteProperty -name "Policy" -Value "Apply All Policies"
             $logObject| add-member -membertype NoteProperty -name "Error" -Value "Success"
             $logObject| add-member -membertype NoteProperty -name "Step" -Value "Applying Policy"
-            $logObject| add-member -membertype NoteProperty -name "Time" -Value $(get-date -Format yyyy-MM-dd-HH:mm:ss)
+            $logObject| add-member -membertype NoteProperty -name "Time" -Value $(get-date -Format yyyy-MM-dd HH:mm:ss)
             $logObject| export-csv $LogPath -nti -append -force     
         }
         catch{
@@ -275,7 +275,7 @@ End
             $errorObject| add-member -membertype NoteProperty -name "Policy" -Value "Apply All Policies"
             $errorObject| add-member -membertype NoteProperty -name "Error" -Value $_.Exception.Message
             $errorObject| add-member -membertype NoteProperty -name "Step" -Value "Applying Policy"
-            $errorObject| add-member -membertype NoteProperty -name "Time" -Value $(get-date -Format yyyy-MM-dd-HH:mm:ss)
+            $errorObject| add-member -membertype NoteProperty -name "Time" -Value $(get-date -Format yyyy-MM-dd HH:mm:ss)
             $errorObject| export-csv $LogPath -nti -append -force
         }
     }
@@ -285,7 +285,7 @@ End
         $errorObject| add-member -membertype NoteProperty -name "Policy" -Value "Apply All Policies"
         $errorObject| add-member -membertype NoteProperty -name "Error" -Value "Applying policies skipped by parameter input."
         $errorObject| add-member -membertype NoteProperty -name "Step" -Value "Applying Policy"
-        $errorObject| add-member -membertype NoteProperty -name "Time" -Value $(get-date -Format yyyy-MM-dd-HH:mm:ss)
+        $errorObject| add-member -membertype NoteProperty -name "Time" -Value $(get-date -Format yyyy-MM-dd HH:mm:ss)
         $errorObject| export-csv $LogPath -nti -append -force
     }
     # Disconnects from Exchange Online
