@@ -284,7 +284,7 @@ End
             $errorObject| export-csv $LogPath -nti -append -force
         }
     }
-    Else{
+    else{
         write-host "NOTICE: Policies not applied. To apply manually, run:  Start-InformationBarrierPoliciesApplication" -ForegroundColor Yellow -BackgroundColor DarkMagenta
         $errorObject = new-object PSObject
         $errorObject| add-member -membertype NoteProperty -name "Policy" -Value "Apply All Policies"
