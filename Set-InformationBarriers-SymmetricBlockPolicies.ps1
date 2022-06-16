@@ -69,7 +69,7 @@
     SOFTWARE.
 
 #>
-[CmdletBinding(SupportsShouldProcess=$True,ConfirmImpact='Medium',DefaultParameterSetName="GlobalBlock")]
+[CmdletBinding(SupportsShouldProcess=$True,ConfirmImpact='Medium')]
 Param(        
     [Parameter(Mandatory=$false,
         HelpMessage="Enter the prefix of segments that are allowed to talk to any other segment. Supports regex and wildcards. Combine multiple segment names with a '|' for example: corp*|sales")]
