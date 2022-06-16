@@ -32,7 +32,10 @@
     Closes the EXO session by default.
 
     .EXAMPLE
-    .\Set-InformationBarriers-SymmetricBlockPolicies.ps1 -Exclusions 'Global*|HR' -GlobalAllow 'Global' -GlobalAllowExclusions 'HR*|Isolated' -LogPath 'C:\logs' -connect $false -disconnect $false -ApplyPolicy $false
+    .\Set-InformationBarriers-SymmetricBlockPolicies.ps1 -Exclusions 'Global' -GlobalAllow 'Global'
+
+    .EXAMPLE
+    .\Set-InformationBarriers-SymmetricBlockPolicies.ps1 -Exclusions 'Global*|HR' -GlobalAllow 'Global' -GlobalAllowExclusions 'Global|HR*|Isolated' -LogPath 'C:\logs' -connect $false -disconnect $false -ApplyPolicy $false
 
     .NOTES
     AUTHOR
