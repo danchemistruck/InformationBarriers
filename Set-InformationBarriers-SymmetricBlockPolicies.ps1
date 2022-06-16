@@ -74,7 +74,7 @@ Param(
     [Parameter(Mandatory=$false,
         HelpMessage="Enter the prefix of segments that are allowed to talk to any other segment. Supports regex and wildcards. Combine multiple segment names with a '|' for example: corp*|sales")]
         [ValidateLength(0,256)]
-        [String]$Exclusions='Global*|GlobalHR',
+        [String]$Exclusions=$null,
 
     [Parameter(Mandatory=$false,
         HelpMessage="Enter the exact Segment name to be used for a global allow policy.")]
@@ -131,7 +131,11 @@ Begin
 Process
 {
     # Gathers all segments (and filters out segments on the Exclusions list) and policies.
-    $segments = Get-OrganizationSegment| where{$_.Name -notmatch $Exclusions}|sort name
+    $segments = Get-OrganizationSegment|sort name
+    $allowedSegments = $segments
+    if(!($Exclusions -eq $null)){
+        $segments = $segments| where{$_.Name -notmatch $Exclusions}
+    }
     $policies = Get-InformationBarrierPolicy
     # Adds all filtered segments to existing policies or creates a new policy.
     $i=0
@@ -199,11 +203,9 @@ Process
     # If a Segment has been added to GlobalAllow, then create an allow policy.
     if (!($GlobalAllow -eq $null)){
         $progress=$GlobalAllow
-        $segments = Get-OrganizationSegment|sort name
         if(!($GlobalAllowExclusions -eq $null)){
-            $segments = $segments| where{$_.Name -notmatch $GlobalAllowExclusions}
+            $allowedSegments = $allowedSegments| where{$_.Name -notmatch $GlobalAllowExclusions}
         }
-        $allowedSegments = $segments #| where{$_.Name -ne $GlobalAllow}
         $name = "Allow " + $GlobalAllow + " to all segments"
         write-host Allow Segment: $progress -foregroundcolor: magenta
         # Find out if there is an existing policy and update it.
